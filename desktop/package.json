@@ -1,0 +1,26 @@
+{
+  "name": "davomat-desktop",
+  "productName": "Davomat",
+  "version": "5.0.0",
+  "description": "Davomat — xodimlar davomati (kompyuter ilovasi)",
+  "main": "main.js",
+  "author": "Davomat",
+  "appUrl": "https://SIZNING-MANZILINGIZ.github.io/",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis portable --publish never"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "uz.davomat.desktop",
+    "productName": "Davomat",
+    "directories": { "output": "dist", "buildResources": "build" },
+    "files": ["main.js", "package.json"],
+    "win": { "icon": "build/icon.png", "signAndEditExecutable": true },
+    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true, "createDesktopShortcut": true, "shortcutName": "Davomat", "artifactName": "Davomat-Setup-${version}.exe" },
+    "portable": { "artifactName": "Davomat-Portable-${version}.exe" }
+  }
+}
